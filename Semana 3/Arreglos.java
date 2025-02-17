@@ -27,7 +27,7 @@ public class Arreglos {
             b[i] = (int) (Math.random() * (30 + 10)) + 10;
         }
 
-        //Mostrar los elementos del arreglo b
+        // Mostrar los elementos del arreglo b
         for (int i = 0; i < b.length; i++) {
             System.out.println("b[" + i + "]=" + b[i]);
         }
