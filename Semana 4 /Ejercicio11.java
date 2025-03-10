@@ -15,6 +15,8 @@ public class Ejercicio11 {
         for (int i = 0; i < a.length; i++) {
             a[i] = (int) (Math.random() * (20 + 20)) - 20;
         }
+
+        System.out.println(Arrays.toString(a));
         // Mostrar el arreglo para validar que se estan guardando los elementos
 
         for (int i = 0; i < a.length; i++) {
