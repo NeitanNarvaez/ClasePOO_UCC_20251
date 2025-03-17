@@ -17,18 +17,18 @@ public class Parking {
             scanner.nextLine(); 
 
             if (opcion == 1) {
-                System.out.println("\nEstado del parqueadero:"); 
+                System.out.println("\nestado del parqueadero:"); 
                 // muestran los puestos disponibles y ocupados
                 for (int i = 0; i < parqueadero.length; i++) {
                     System.out.print("Puesto " + i + ": ");
                     if (parqueadero[i] == 0) {
-                        System.out.println("[Libre]");
+                        System.out.println("Libre");
                     } else {
-                        System.out.println("[Ocupado] - Placa: " + placas[i]);
+                        System.out.println("Ocupado * Placa: " + placas[i]);
                     }
                 } 
 
-                System.out.print("\nseleccione un puesto (0-19): "); 
+                System.out.print("\nseleccione un puesto 0-19: "); 
                 int puesto = scanner.nextInt();
                 scanner.nextLine(); 
                 //se solicita la placa de la moto 
@@ -56,15 +56,15 @@ public class Parking {
                     System.out.println("Puesto no válido o ya ocupado.");
                 }
             } else if (opcion == 2) {
-                System.out.print("ingrese el puesto de la moto a cobrar (0-19): ");
+                System.out.print("ingrese el puesto de la moto a cobrar 0-19: ");
                 int puesto = scanner.nextInt();
-
+                // calculo de costo por tiempo en el paqqueadero
                 if (puesto >= 0 && puesto < 20 && parqueadero[puesto] == 1) {
-                    System.out.println("Moto con placa: " + placas[puesto]);
+                    System.out.println("moto con placa: " + placas[puesto]);
                     System.out.print("ingrese cuanto tiempo estuvo en minutos: ");
                     int tiempo = scanner.nextInt();
                     int tarifa;
-
+                      
                     if (tiempo <= 30) {
                         tarifa = 0;
                     } else if (tiempo <= 60) {
@@ -75,8 +75,8 @@ public class Parking {
 
                     System.out.println("total a pagar: $" + tarifa);
                     parqueadero[puesto] = 0; // se libera el puesto que esta ocupado
-                    placas[puesto] = null; // se elimina la  la placa registrada
-                    System.out.println("puesto " + puesto + " ha sido liberado.");
+                    placas[puesto] = null; // eliminamos la  la placa registrada
+                    System.out.println("puesto " + puesto + " ya esta libre.");
                 } else {
                     System.out.println("puesto no valido o vacio.");
                 }
